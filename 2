@@ -1,0 +1,73 @@
+
+import org.json.simple.JSONObject;
+import org.json.simple.JSONArray;
+
+
+public class Real {
+
+	public static void main(String[] args) {
+        JSONObject jsonObject = new JSONObject();
+        
+        //person�� JSON������ ���� Array ����
+        JSONArray personArray = new JSONArray();
+ 
+        //person�� �Ѹ� ������ �� JSONObject ����
+        JSONObject personInfo = new JSONObject();
+ 
+        //���� �Է�
+        personInfo.put("name", "�۰�ȣ");
+        personInfo.put("age", "25");
+        personInfo.put("gender", "����");
+        personInfo.put("nickname", "���ùμ�");
+        //Array�� �Է�
+        personArray.add(personInfo);
+ 
+        personInfo = new JSONObject();
+        personInfo.put("name", "������");
+        personInfo.put("age", "21");
+        personInfo.put("gender", "����");
+        personInfo.put("nickname", "������");
+        personArray.add(personInfo);
+ 
+        //��ü�� JSONObject�� ����̶� name���� JSON�� ������ ������ Array�� value�� �Է�
+        jsonObject.put("persons", personArray);
+ 
+         
+        JSONArray bookArray = new JSONArray();
+ 
+        JSONObject bookInfo = new JSONObject();
+ 
+        bookInfo.put("name", "����� �������� ��°�?");
+        bookInfo.put("writer", "�罺����");
+        bookInfo.put("price", "100");
+        bookInfo.put("genre", "�Ҽ�");
+        bookInfo.put("publisher", "�罺���� ���ǻ�");
+        bookArray.add(bookInfo);
+ 
+        bookInfo = new JSONObject();
+        bookInfo.put("name", "ȫ�浿��");
+        bookInfo.put("writer", "���");
+        bookInfo.put("price", "300");
+        bookInfo.put("genre", "�Ҽ�");
+        bookInfo.put("publisher", "��� ���ǻ�");
+        bookArray.add(bookInfo);
+ 
+        bookInfo = new JSONObject();
+        bookInfo.put("name", "���������");
+        bookInfo.put("writer", "���丣 ����");
+        bookInfo.put("price", "900");
+        bookInfo.put("genre", "�Ҽ�");
+        bookInfo.put("publisher", "���丣 ���� ���ǻ�");
+        bookArray.add(bookInfo);
+ 
+        jsonObject.put("books", bookArray);
+ 
+        //JSONObject�� String ��ü�� �Ҵ�
+        String jsonInfo = jsonObject.toJSONString();
+ 
+        System.out.print(jsonInfo);
+
+
+	}
+
+}
